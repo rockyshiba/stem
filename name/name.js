@@ -1,27 +1,29 @@
 //grab the DOM elements by their ids
-var name = document.getElementById("name");
+var uName = document.getElementById("name");
 var gender = document.getElementById("gender");
 var button = document.getElementById("button");
 var output = document.getElementById("output");
 
 //set functionality on click of the button
 button.onclick = function(){
-    if(isNotEmpty(name.value) && makeSelection(gender.value)){ //if both the name AND gender fields have a selection
+    console.log(uName.value);
+    console.log(isNotEmpty(uName.value));
+    if(isNotEmpty(uName.value) && makeSelection(gender.value)){ //if both the uName AND gender fields have a selection
         if(gender.value === "male"){ //if the selection was boy. The value was taken from the select tag, not the text inside of it
-            output.innerHTML = "Hello Mr. " + name.value;
+            output.innerHTML = "Hello Mr. " + uName.value;
         }
         else{ //otherwise, greet the user with a girl's salutation
-            output.innerHTML = "Hello Miss. " + name.value;
+            output.innerHTML = "Hello Miss. " + uName.value;
         }
     }
-    else{ //otherwise, (that is, if either the name and gender fields were empty) do the following
-        if(isNotEmpty(name.value)){ //if the name field has a value then tell the user to provide a gender
+    else{ //otherwise, (that is, if either the uName and gender fields were empty) do the following
+        if(isNotEmpty(uName.value)){ //if the uName field has a value then tell the user to provide a gender
             output.innerHTML = "Please indicate a gender";
         }
-        else if(makeSelection(gender.value)){ //if the gender field has a value then tell the user to provide a name
+        else if(makeSelection(gender.value)){ //if the gender field has a value then tell the user to provide a uName
             output.innerHTML = "Please provide a name";
         }
-        else{ //otherwise (that is, if neither the name nor the gender were provided), tell the user to provide both a name and a gender
+        else{ //otherwise (that is, if neither the uName nor the gender were provided), tell the user to provide both a uName and a gender
             output.innerHTML = "Please provide a name and gender";
         }
     }
