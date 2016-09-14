@@ -6,22 +6,22 @@ var output = document.getElementById("output");
 
 //set functionality on click of the button
 button.onclick = function(){
-    if(isNotEmpty(name.value) && makeSelection(gender.value)){
-        if(gender.value === "male"){
+    if(isNotEmpty(name.value) && makeSelection(gender.value)){ //if both the name AND gender fields have a selection
+        if(gender.value === "male"){ //if the selection was boy. The value was taken from the select tag, not the text inside of it
             output.innerHTML = "Hello Mr. " + name.value;
         }
-        else{
+        else{ //otherwise, greet the user with a girl's salutation
             output.innerHTML = "Hello Miss. " + name.value;
         }
     }
-    else{
-        if(isNotEmpty(name.value)){
+    else{ //otherwise, (that is, if either the name and gender fields were empty) do the following
+        if(isNotEmpty(name.value)){ //if the name field has a value then tell the user to provide a gender
             output.innerHTML = "Please indicate a gender";
         }
-        else if(makeSelection(gender.value)){
+        else if(makeSelection(gender.value)){ //if the gender field has a value then tell the user to provide a name
             output.innerHTML = "Please provide a name";
         }
-        else{
+        else{ //otherwise (that is, if neither the name nor the gender were provided), tell the user to provide both a name and a gender
             output.innerHTML = "Please provide a name and gender";
         }
     }
