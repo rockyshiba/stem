@@ -29,9 +29,34 @@ var mixedArray = [fruits, numbers, cars];
 console.log("Index 0 of fruits is: " + fruits[0]);
 console.log("Index 1 of fruits is: " + fruits[1]);
 
+//arrays within arrays can be accessed as well. You just need to declare addtional indices
+console.log("Item in an array that's in another array: " + mixedArray[2][1]);
+
 //arrays have a property called "length" and it returns the number of items in an array
 console.log("Numbers has " + numbers.length + " array items");
 
 //the length property is useful to find the index of the last item of an array
 //remember that arrays start with the index 0 so the last item of an array is always the length of the array minus 1
 console.log("The last item of cars is " + cars[cars.length - 1]); //cars[2]
+
+//you can alter arrays in a number of ways
+
+//you can replace an index of an array by assignment
+//fruits[1] = "tangerine";
+
+//you can add to an array by assignment
+//console.log(numbers[5]);
+//numbers[5] = 6;
+//console.log(numbers[5]);
+
+//you can add to an array using the push method. What you give to push makes it [0] of an array. Be mindful that the index of each item will go up by one
+//fruits.push("pineapple");
+//console.log(fruits[0]);
+
+//if you console.log an array push, it returns the new length of the array
+//console.log(fruits.push("cucumber"));
+
+//array items can be removed using the unshift method. The index of each item may change depending on where you removed the item
+//fruits.unshift("banana");
+//just like push, unshift returns the new length of the array
+//console.log(fruits.unshift("orange"));
